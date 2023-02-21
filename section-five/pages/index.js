@@ -1,4 +1,5 @@
 import fs from "fs/promises";
+import Link from "next/link";
 import path from "path";
 
 const Home = (props) => {
@@ -7,7 +8,9 @@ const Home = (props) => {
     <>
       <ul>
         {products.map((product) => (
-          <li key={product.id}>{product.title}</li>
+          <li key={product.id}>
+            <Link href={`/${product.id}`}>{product.title}</Link>
+          </li>
         ))}
       </ul>
     </>
@@ -15,6 +18,7 @@ const Home = (props) => {
 };
 
 export async function getStaticProps() {
+  console.log("Re Generating...");
   const filePath = path.join(process.cwd(), "data", "dummy-backend.json");
 
   const jsonData = await fs.readFile(filePath);
@@ -25,6 +29,7 @@ export async function getStaticProps() {
     props: {
       products: data.products,
     },
+    revalidate: 10,
   };
 }
 
