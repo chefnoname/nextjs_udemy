@@ -1,9 +1,8 @@
-import FeaturedPosts from "@/components/home-page/FeaturedPosts/FeaturedPosts";
-import Hero from "@/components/home-page/Hero/Hero";
+const { default: AllPosts } = require("@/components/posts/AllPosts/AllPosts")
 
 const DUMMY_POSTS = [
   {
-    slug: "getting-started-with-nextjs",
+    slug: "words-separate-by-dashes3",
     title: "Words Separated by Dashes",
     image: "getting-started.png",
     excerpt:
@@ -28,13 +27,10 @@ const DUMMY_POSTS = [
   },
 ];
 
-const HomePage = () => {
+const AllPostsPage = () => {
   return (
-    <>
-      <Hero />
-      <FeaturedPosts posts={DUMMY_POSTS} />
-    </>
-  );
-};
+    <AllPosts posts={DUMMY_POSTS}/>
+  )
+}
 
-export default HomePage;
+export default AllPostsPage
