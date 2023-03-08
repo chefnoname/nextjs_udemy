@@ -1,36 +1,19 @@
-const { default: AllPosts } = require("@/components/posts/AllPosts/AllPosts")
+import { getAllPosts } from "@/lib/posts-util";
 
-const DUMMY_POSTS = [
-  {
-    slug: "words-separate-by-dashes3",
-    title: "Words Separated by Dashes",
-    image: "getting-started.png",
-    excerpt:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, perferendis!",
-    date: "2021-02-23",
-  },
-  {
-    slug: "words-separate-by-dashes1",
-    title: "Words Separated by Dashes",
-    image: "getting-started.png",
-    excerpt:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, perferendis!",
-    date: "2021-02-23",
-  },
-  {
-    slug: "words-separate-by-dashes2",
-    title: "Words Separated by Dashes",
-    image: "getting-started.png",
-    excerpt:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, perferendis!",
-    date: "2021-02-23",
-  },
-];
+const { default: AllPosts } = require("@/components/posts/AllPosts/AllPosts");
 
-const AllPostsPage = () => {
-  return (
-    <AllPosts posts={DUMMY_POSTS}/>
-  )
+const AllPostsPage = (props) => {
+  return <AllPosts posts={props.allPosts} />;
+};
+
+export function getStaticProps() {
+  const allPosts = getAllPosts();
+
+  return {
+    props: {
+      allPosts,
+    },
+  };
 }
 
-export default AllPostsPage
+export default AllPostsPage;

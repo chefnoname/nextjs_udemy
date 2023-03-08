@@ -11,9 +11,10 @@ const PostItem = (props) => {
     year: "numeric",
   });
 
+
   const imagePath = `/images/posts/${slug}/${image}`;
   const linkPath = `/posts/${slug}`;
-
+console.log(imagePath, 'postGrid compo')
   return (
     <li className={classes.post}>
       <Link href={linkPath}>
@@ -21,10 +22,9 @@ const PostItem = (props) => {
           <Image
             className={classes.image}
             src={imagePath}
-            alt={title}
+            alt='Post Grid Compo'
             width={300}
             height={200}
-            layout
           />
         </div>
         <div className={classes.content}>
