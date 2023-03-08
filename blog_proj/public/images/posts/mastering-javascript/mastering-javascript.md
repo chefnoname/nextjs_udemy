@@ -2,7 +2,7 @@
 title: Mastering JavaScript
 excerpt: JavaScript is the most important programming language for web development. You probably don't know it well enough!
 image: mastering-js-thumb.png
-isFeatured: true
+isFeatured: false
 date: '2021-10-30'
 ---
 
@@ -11,9 +11,9 @@ JavaScript powers the web - it's **the** most important programming language you
 For example, you should understand code like this:
 
 ```js
-const basics = 'Am I fit enough to be a Next.js dev?!?!!';
+const basics = 'Okay, that should not be too difficult actually';
 
-const printBasics = () => {
+function printBasics() {
   console.log(basics):
 }
 
