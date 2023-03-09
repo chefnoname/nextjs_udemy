@@ -1,8 +1,6 @@
 import { MongoClient } from "mongodb";
 
 async function handler(req, res) {
-  console.log(req.method, "this is the method");
-
   if (req.method === "POST") {
     const { email, name, message } = JSON.parse(req.body);
 
@@ -23,9 +21,9 @@ async function handler(req, res) {
     // Store it in a database
 
     const newMsg = {
-      email: email,
-      name: name,
-      message: message,
+      email,
+      name,
+      message,
     };
 
     let client;
