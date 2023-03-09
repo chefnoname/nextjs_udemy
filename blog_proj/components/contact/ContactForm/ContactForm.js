@@ -48,9 +48,9 @@ const ContactForm = () => {
         message: enteredMsg,
       });
       setRequestStatus("success");
-      // setEnteredEmail("");
-      // setEnteredMsg("");
-      // setEnteredName("");
+      setEnteredEmail("");
+      setEnteredMsg("");
+      setEnteredName("");
     } catch (error) {
       setRequestErr(error.message);
       setRequestStatus("error");
