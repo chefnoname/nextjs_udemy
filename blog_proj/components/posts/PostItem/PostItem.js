@@ -14,7 +14,6 @@ const PostItem = (props) => {
 
   const imagePath = `/images/posts/${slug}/${image}`;
   const linkPath = `/posts/${slug}`;
-console.log(imagePath, 'postGrid compo')
   return (
     <li className={classes.post}>
       <Link href={linkPath}>

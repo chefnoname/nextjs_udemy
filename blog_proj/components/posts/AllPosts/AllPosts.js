@@ -3,10 +3,10 @@ import classes from "./AllPosts.module.css";
 
 const AllPosts = (props) => {
   return (
-    <sectio className={classes.posts}>
+    <section className={classes.posts}>
       <h1>All Posts</h1>
       <PostsGrid posts={props.posts} />
-    </sectio>
+    </section>
   );
 };
 
